@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>兑换码</title>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/middle.css" />
+		<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4368143_5fp8rsmuz56.css" />
+	</head>
+	<body>
+		<!-- 左边的盒子 -->
+		<div class="left_box">
+			<!-- logo -->
+			<a class="left_box_logo" href="/">
+				<img src="/static/images/logo.png" alt="" />
+			</a>
+			<div class="left_box_dht">
+				<a href="/" class="">
+					<i class="iconfont icon-shouye"></i>
+				</a>
+				<a href="/shop" class="">
+					<i class="iconfont icon-shangdian"></i>
+				</a>
+				<a class="nav_selected">
+					<i class="iconfont icon-mima"></i>
+				</a>
+			</div>
+			<!-- 形象 -->
+			<div class="left_box_xx">
+				<img src="/static/images/user_icon.png" alt="" />
+			</div>
+		</div>
+		<!-- 右边的盒子 -->
+		<div class="right_box">
+			<!-- 登陆注册 -->
+			<a class="right_box_sign">
+				<img src="/static/images/huabi.png" alt="" />
+			</a>
+			<!-- 向下滚动提示条 -->
+			<div class="right_box_gundong" id="icon_down">
+				<i class="iconfont icon-xiangxia"></i>
+				<div class="right_box_gundong_text">
+					Loding Down
+				</div>
+			</div>
+			<!-- 向上滚动提示条 -->
+			<div class="right_box_gundong" id="details_box_up" onclick="dedeup()">
+				<i class="iconfont icon-xiangshang"></i>
+				<div class="right_box_gundong_text">
+					UP
+				</div>
+			</div>
+			<!-- 底部消息 -->
+			<div class="right_box_bottom">
+				<i class="iconfont icon-xiaoxi"></i>
+			</div>
+		</div>
+		<!-- 中间固定的盒子 -->
+		<div class="middle_top_box">
+			<form action="">
+				<input type="text" placeholder="Search" />
+			</form>
+		</div>
+		<!-- 中间下面的盒子 -->
+		<div class="middle_center">
+			<div class="code_box" id="code_box">
+				<div class="code_box_box">
+					<div class="code_box_title">
+						<h1>
+							<span>Redemption landing page</span><br />
+							<span>Email as the first verification</span>
+						</h1>
+						<p>asdadsssdasdadsssdasdadsssdasdadsssdasdadsssd</p>
+					</div>
+					<div class="code_box_input">
+						<div class="code_box_input_box">
+							<form action="">
+								<input id="email_inpu" autocomplete="off" class="code_box_input_box_input" type="email" placeholder="请输入您的邮箱进行兑换" />
+								<input onclick="btn_btn()" class="code_box_input_box_btn" type="submit" value="" />
+							</form>
+						</div>
+					</div>
+				</div>
+				<!-- 表单 -->
+				<div class="code_box_list" id="code_box_list">
+					<!-- 购买纪录 -->
+					<div class="code_box_list_box">
+						<img src="/static/images/banner_demo.jpg" alt="" />
+						<div class="code_box_list_box_box">
+							<div class="code_box_list_box_box_box">
+								<p class="code_box_list_box_box_1">PononTexT</p>
+								<p class="code_box_list_box_box_2">主题名称 / ThemeName</p>
+							</div>
+							<div class="code_box_list_box_box_box">
+								<p class="code_box_list_box_box_1">2023-12-12 12:12:12</p>
+								<p class="code_box_list_box_box_2">上传时间 / UpTime</p>
+							</div>
+							<div class="code_box_list_box_box_box">
+								<p class="code_box_list_box_box_1">2023-12-12 12:12:12</p>
+								<p class="code_box_list_box_box_2">购买时间 / BuyName</p>
+							</div>
+							<div class="code_box_list_box_box_box">
+								<p class="code_box_list_box_box_1">
+									<span>¥</span>
+									<span>88</span>
+								</p>
+								<p class="code_box_list_box_box_2">价格 / Price</p>
+							</div>
+						</div>
+						<!-- 下载按钮 -->
+						<a href="#" class="code_box_list_box_btn">Download</a>
+					</div>
+					
+					
+				</div>
+
+			</div>
+		</div>
+		
+		
+		<script>
+			// 动态计算高度
+			function auto_index_box() {
+				// 获取网页可视区域的高度
+				var viewportHeight = window.innerHeight;
+				var viewportWidth = window.innerWidth;
+				var index_box = document.getElementById("code_box");
+				var code_box_list = document.getElementById("code_box_list")
+				// 打印网页可视区域的高度
+				console.log("网页可视区域的高度是：" + viewportHeight + "像素");
+				index_box.style.height = viewportHeight - 200 + "px";
+			}
+			
+			// 监听窗口大小改变事件
+			window.addEventListener('resize', auto_index_box);
+			
+			// 检测邮箱填对了吗
+			function check_email() {
+				var email = document.getElementById('email_inpu').value;
+				var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+				return regex.test(email);
+			}
+			
+			//兑换按钮
+			function btn_btn() {
+				var email = document.getElementById('email_inpu').value;
+				if (email === '') {
+					alert("请输入您购买时输入的邮箱地址查询！");
+					return;
+				}
+				if (check_email()) {
+					alert("有效的邮箱地址");
+				} else {
+					alert("邮箱地址错误，请输入正确邮箱地址！");
+				}
+			}
+			auto_index_box();
+			
+			// 返回顶部
+			function dedeup() {
+				// 返回顶部
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			}
+			
+			function auto_icon() {
+				window.addEventListener('scroll', function() {
+					var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+					var element = document.getElementById("details_box_up");
+					var down = document.getElementById("icon_down");
+					if (scrollPosition > 100) {
+						element.style.display = "block";
+						down.style.display = "none";
+					} else {
+						element.style.display = "none";
+						down.style.display = "block";
+					}
+				});
+			}
+			// 返回顶部
+			function dedeup() {
+				// 返回顶部
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			}
+			auto_icon();
+		</script>
+	</body>
+</html>

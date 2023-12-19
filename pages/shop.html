@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>主题商店</title>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/middle.css" />
+		<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4368143_5fp8rsmuz56.css" />
+	</head>
+	<body>
+		<!-- 左边的盒子 -->
+		<div class="left_box">
+			<!-- logo -->
+			<a class="left_box_logo" href="/">
+				<img src="/static/images/logo.png" alt="" />
+			</a>
+			<div class="left_box_dht">
+				<a href="/" class="">
+					<i class="iconfont icon-shouye"></i>
+				</a>
+				<a class="nav_selected">
+					<i class="iconfont icon-shangdian"></i>
+				</a>
+				<a href="/code" class="">
+					<i class="iconfont icon-mima"></i>
+				</a>
+			</div>
+			<!-- 形象 -->
+			<div class="left_box_xx">
+				<img src="/static/images/user_icon.png" alt="" />
+			</div>
+		</div>
+		<!-- 右边的盒子 -->
+		<div class="right_box">
+			<!-- 登陆注册 -->
+			<a class="right_box_sign">
+				<img src="/static/images/huabi.png" alt="" />
+			</a>
+			<!-- 向下滚动提示条 -->
+			<div class="right_box_gundong" id="icon_down">
+				<i class="iconfont icon-xiangxia"></i>
+				<div class="right_box_gundong_text">
+					Loding Down
+				</div>
+			</div>
+			<!-- 向上滚动提示条 -->
+			<div class="right_box_gundong" id="details_box_up" onclick="dedeup()">
+				<i class="iconfont icon-xiangshang"></i>
+				<div class="right_box_gundong_text">
+					UP
+				</div>
+			</div>
+			<!-- 底部消息 -->
+			<div class="right_box_bottom">
+				<i class="iconfont icon-xiaoxi"></i>
+			</div>
+		</div>
+		<!-- 中间固定的盒子 -->
+		<div class="middle_top_box">
+			<form action="">
+				<input type="text" placeholder="Search" />
+			</form>
+		</div>
+		<!-- 中间下面的盒子 -->
+		<div class="middle_center">
+			<!-- 标题部分 -->
+			<div class="middle_center_title">
+				<h1>SALES</h1>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem temporibus eum, totam quisquam minus nam
+					a itaque suscipit deserunt aliquam ipsam tempore labore soluta dolores tenetur rerum culpa incidunt
+					quidem.</p>
+			</div>
+			<!-- tab部分 -->
+			<div class="middle_center_tab">
+				<a class="tab_selected">All</a>
+				<a class="">Blog</a>
+				<a class="">Company</a>
+				<a>Other</a>
+			</div>
+			<!-- 主要内容表单 -->
+			<div class="middle_center_list">
+				<div class="middle_center_list_box">
+					<div class="middle_center_list_box_top">
+						<img src="/static/images/banner_demo.jpg" alt="" />
+					</div>
+					<div class="middle_center_list_box_bottom">
+						<div class="middle_center_list_box_label">
+							<div class="middle_center_list_box_label_top">
+								<span class="middle_center_list_box_label_top_fh">¥</span>
+								<span class="middle_center_list_box_label_top_number">88</span>
+							</div>
+							<div class="middle_center_list_box_label_bottom">HOLD</div>
+						</div>
+						<p class="middle_center_list_box_bottom_uptime">
+							<span>UPTIME</span>
+							<span>2023-12-12 09:30</span>
+						</p>
+						<p class="middle_center_list_box_bottom_theme_name">PononTexT</p>
+						<p class="middle_center_list_box_bottom_theme_miaoshu">
+							这是一段描述文字这是一段描述文字这是一段描述文字这是一段描述文字
+						</p>
+						<div class="middle_center_list_box_bottom_btn">
+							<a href="/details">DETAILS</a>
+							<a href="" target="_blank">DEMO</a>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+		</div>
+		<script>
+			function auto_icon() {
+				window.addEventListener('scroll', function() {
+					var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+					var element = document.getElementById("details_box_up");
+					var down = document.getElementById("icon_down");
+					if (scrollPosition > 100) {
+						element.style.display = "block";
+						down.style.display = "none";
+					} else {
+						element.style.display = "none";
+						down.style.display = "block";
+					}
+				});
+			}
+			// 返回顶部
+			function dedeup() {
+				// 返回顶部
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			}
+			auto_icon();
+		</script>
+	</body>
+</html>

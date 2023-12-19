@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理系统</title>
+		<link rel="stylesheet" href="/static/css/admin.css" />
+		<script src="/static/js/admin.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="header_left">
+				<a class="header_left_1" href="/admin">控制台</a>
+				<a href="/admin_class">分类管理</a>
+				<a href="/admin_product">产品管理</a>
+				<a href="/admin_order">订单管理</a>
+			</div>
+			<div class="header_right">
+				<a>asdadasdasdas</a>
+				<a href="">退出登陆</a>
+				<a class="header_right_3" target="_blank" href="/">网站</a>
+			</div>
+		</header>
+
+		<div class="content">
+			<!-- 添加产品 -->
+			<div class="add_product" id="addProduct">
+			    <div class="product_title">
+			        <span>添加产品</span>
+			    </div>
+			    <div class="add_product_box">
+			        <form action="">
+			            <div class="add_product_box_left">
+			                <input class="product_name" type="text" placeholder="主题名称" />
+			                <textarea autocomplete="off" id="text" name="text" class="product_details" placeholder="详情"></textarea>
+			                <input class="product_demolink" type="text" placeholder="DEMO链接" />
+			                <input class="product_downloadlink" type="text" placeholder="下载地址" />
+			                <input class="product_sub" type="submit" id="" name="" value="发布主题" />
+			            </div>
+			            <div class="add_product_box_right">
+			                <section class="add_product_box_right_option">
+			                    <label class="add_product_box_right_option_title">主题分类</label>
+			                    <ul>
+			                        <li>
+			                            <input type="checkbox">
+			                            <label>默认分类</label>
+			                        </li>
+			                        <!-- 可以根据需要添加更多的分类选项 -->
+			                        <li>
+			                            <input type="checkbox">
+			                            <label>分类 2</label>
+			                        </li>
+			                        <li>
+			                            <input type="checkbox">
+			                            <label>分类 3</label>
+			                        </li>
+			                    </ul>
+			                </section>
+			            </div>
+			        </form>
+			    </div>
+			</div>
+
+		</div>
+</body>
+</html>

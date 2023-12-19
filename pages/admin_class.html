@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理系统</title>
+		<link rel="stylesheet" href="/static/css/admin.css" />
+		<script src="/static/js/admin.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="header_left">
+				<a class="header_left_1" href="/admin">控制台</a>
+				<a >分类管理</a>
+				<a href="/admin_product">产品管理</a>
+				<a href="/admin_order">订单管理</a>
+			</div>
+			<div class="header_right">
+				<a>{{ username }}</a>
+				<a href="">退出登陆</a>
+				<a class="header_right_3" target="_blank" href="/">网站</a>
+			</div>
+		</header>
+
+		<div class="content">
+			<!-- 产品管理 -->
+			<div class="product" id="product">
+				<div class="product_title">
+					<span>分类管理</span>
+					<a href="/admin_addclass" class="product_title_btn">新增</a>
+				</div>
+				<div class="product_list">
+					<table>
+						<thead>
+							<th>分类名称</th>
+							<th>创建日期</th>
+							<th>操作</th>
+						</thead>
+						<tbody>
+							{% for todo in allclass %}
+							<tr>
+								<td>{{ todo.class_name }}</td>
+								<td>{{ todo.class_create_time }}</td>
+								<td class="tab_bj">
+									<a href="">编辑</a>
+									<a href="">删除</a>
+								</td>
+							</tr>
+							{% endfor %}
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+</body>
+</html>

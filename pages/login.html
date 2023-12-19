@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>管理员登陆</title>
+		<link rel="stylesheet" href="/static/css/login.css" />
+	</head>
+	<body>
+		<!-- 登陆模块 -->
+		<div class="login_box">
+			<div class="login_box_left">
+				<img src="/static/images/login_bg.png" alt="" />
+			</div>
+			<div class="login_box_right">
+				<div class="login_box_right_box">
+					<h1>Login</h1>
+					<p>在这里进行管理，使用您的管理员账号登陆！</p>
+					<form action="/login" method="post">
+						<!-- 用户名 -->
+						<div class="login_box_right_username" id="login_box_right_username" onclick="name()">
+							<img src="/static/images/username.png" alt="" />
+							<input type="username" name="username" autocomplete="off" placeholder="username" />
+						</div>
+						<!-- 用户名 -->
+						<div class="login_box_right_password" id="login_box_right_password" onclick="pas()">
+							<img src="/static/images/password.png" alt="" />
+							<input type="password" name="password" autocomplete="off" placeholder="password" />
+						</div>
+						<!-- 登陆按钮 -->
+						<div class="login_box_right_submit">
+							<input type="submit" value="登 陆" />
+						</div>
+						<!-- 错误信息 -->
+						<p>{{ error }}</p>
+
+					</form>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<script>
+			function name() {
+				document.getElementById("login_box_right_username").style.borderColor = "#9cb9ff";
+				document.getElementById("login_box_right_password").style.borderColor = "#666666";
+			}
+			function pas(){
+				document.getElementById("login_box_right_username").style.borderColor = "#666666";
+				document.getElementById("login_box_right_password").style.borderColor = "#9cb9ff";
+			}
+		</script>
+	</body>
+</html>

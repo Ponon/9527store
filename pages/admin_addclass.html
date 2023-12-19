@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>后台管理系统</title>
+		<link rel="stylesheet" href="/static/css/admin.css" />
+		<script src="/static/js/admin.js"></script>
+	</head>
+	<body>
+		<header>
+			<div class="header_left">
+				<a class="header_left_1" href="/admin">控制台</a>
+				<a href="/admin_class">分类管理</a>
+				<a href="admin_product.html">产品管理</a>
+				<a href="admin_order.html">订单管理</a>
+			</div>
+			<div class="header_right">
+				<a>{{ username }}</a>
+				<a href="">退出登陆</a>
+				<a class="header_right_3" target="_blank" href="/">网站</a>
+			</div>
+		</header>
+
+		<div class="content">
+			<!-- 添加产品 -->
+			<div class="add_product" id="addProduct">
+			    <div class="product_title">
+			        <span>添加分类</span>
+			    </div>
+			    <div class="add_product_box">
+			        <form action="/class" method="post">
+			            <div class="add_product_box_left">
+			                <input name="class_name" class="product_name" type="text" placeholder="分类名称" />
+			                <input class="product_sub" type="submit" id="" name="" value="发布分类" />
+			            </div>
+			        </form>
+			    </div>
+			</div>
+
+		</div>
+</body>
+</html>

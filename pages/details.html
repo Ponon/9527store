@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商品详情</title>
+		<link rel="stylesheet" href="/static/css/style.css" />
+		<link rel="stylesheet" href="/static/css/middle.css" />
+		<link rel="stylesheet" href="//at.alicdn.com/t/c/font_4368143_5fp8rsmuz56.css" />
+	</head>
+	<body>
+		<!-- 左边的盒子 -->
+		<div class="left_box">
+			<!-- logo -->
+			<a class="left_box_logo" href="/">
+				<img src="/static/images/logo.png" alt="" />
+			</a>
+			<div class="left_box_dht">
+				<a href="/" class="">
+					<i class="iconfont icon-shouye"></i>
+				</a>
+				<a href="/shop" class="">
+					<i class="iconfont icon-shangdian"></i>
+				</a>
+				<a href="/code" class="">
+					<i class="iconfont icon-mima"></i>
+				</a>
+			</div>
+			<!-- 形象 -->
+			<div class="left_box_xx">
+				<img src="/static/images/user_icon.png" alt="" />
+			</div>
+		</div>
+		<!-- 右边的盒子 -->
+		<div class="right_box">
+			<!-- 登陆注册 -->
+			<a class="right_box_sign">
+				<img src="/static/images/huabi.png" alt="" />
+			</a>
+			<!-- 向下滚动提示条 -->
+			<div class="right_box_gundong" id="icon_down">
+				<i class="iconfont icon-xiangxia"></i>
+				<div class="right_box_gundong_text">
+					Loding Down
+				</div>
+			</div>
+			<!-- 向上滚动提示条 -->
+			<div class="right_box_gundong" id="details_box_up" onclick="dedeup()">
+				<i class="iconfont icon-xiangshang"></i>
+				<div class="right_box_gundong_text">
+					UP
+				</div>
+			</div>
+			<!-- 底部消息 -->
+			<div class="right_box_bottom">
+				<i class="iconfont icon-xiaoxi"></i>
+			</div>
+		</div>
+		<!-- 中间固定的盒子 -->
+		<div class="middle_top_box">
+			<form action="">
+				<input type="text" placeholder="Search" />
+			</form>
+		</div>
+		<!-- 中间下面的盒子 -->
+		<div class="middle_center">
+			<div class="details_box">
+				<div class="details_box_left">
+					<img src="/static/images/banner_demo.jpg" alt="" />
+					<img src="/static/images/banner_demo.jpg" alt="" />
+					<img src="/static/images/banner_demo.jpg" alt="" />
+					<img src="/static/images/banner_demo.jpg" alt="" />
+				</div>
+				<div class="details_box_right" id="details_box_right">
+					<h1 class="details_box_right_title">PononText123123</h1>
+					<p class="details_box_right_miaoshu">
+						这是一段简介这是一段简介这是一段简介这是一段简介这是一段简介这是一段简介这是一段简介这是一段简介这是一段简介
+					</p>
+					<h2 class="details_box_right_jiage">
+						<span class="details_box_right_jiage_1">¥</span>
+						<span class="details_box_right_jiage_2">888</span>
+					</h2>
+					<div class="details_box_right_btn">
+						
+						<input type="email" autocomplete="off" name="" id="email_inpu" placeholder="请输入您的邮箱,它将作为您的查询码!">
+
+						<button type="submit" class="details_box_right_btn_1" id="btn_btn"
+							onclick="btn_btn()">立即购买</button>
+						<a href="" target="_blank" class="details_box_right_btn_2">DEMO</a>
+					</div>
+
+					<div class="details_box_right_jiageshuoming">
+						<p>用户协议：</p>
+						<p>
+							该商品为虚拟商品，类型为TYPECHO主题源码，出售只包含本套源码文件，不包含任何售后服务。
+							产品售出后不退不换，点击购买视为同意以上用户协议。
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			// 检测邮箱填对了吗
+			function check_email() {
+				var email = document.getElementById('email_inpu').value;
+				var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+				return regex.test(email);
+			}
+			//立即购买
+			function btn_btn() {
+				var email = document.getElementById('email_inpu').value;
+				if (email === '') {
+					alert("请输入邮箱地址，它将作为您的查询码使用！");
+					return;
+				}
+				if (check_email()) {
+					alert("有效的邮箱地址");
+				} else {
+					alert("邮箱地址错误，请输入正确邮箱地址！");
+				}
+			}
+
+
+			// 右边浮动
+			function details_box_right() {
+				window.addEventListener('scroll', function() {
+					var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+					var details_box_right = document.getElementById("details_box_right");
+					details_box_right.style.paddingTop = scrollPosition + "px"
+				});
+			}
+
+			details_box_right();
+			// 返回顶部
+			function dedeup() {
+				// 返回顶部
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth',
+				});
+			}
+
+			function auto_icon() {
+				window.addEventListener('scroll', function() {
+					var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+					var element = document.getElementById("details_box_up");
+					var down = document.getElementById("icon_down");
+					if (scrollPosition > 100) {
+						element.style.display = "block";
+						down.style.display = "none";
+					} else {
+						element.style.display = "none";
+						down.style.display = "block";
+					}
+				});
+			}
+			// 返回顶部
+			function dedeup() {
+				// 返回顶部
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			}
+			auto_icon();
+		</script>
+	</body>
+</html>
