@@ -99,7 +99,8 @@ async def adminclass(req: Request):
     # 获取所有的todes
     all_class = await Class.all()
     username = "ponon"
-    return template.TemplateResponse("admin_class.html", context={"request": req, "allclass": all_class ,"username": username})
+    return template.TemplateResponse("admin_class.html",
+                                     context={"request": req, "allclass": all_class, "username": username})
 
 
 # 后台管理-添加分类
@@ -124,7 +125,8 @@ async def allproduct(req: Request):
     all_commodities = await Commodity.all()
     # 设置用户名
     username = "ponon"
-    return template.TemplateResponse("admin_product.html", context={"request": req, "all_commodities": all_commodities, "username": username})
+    return template.TemplateResponse("admin_product.html",
+                                     context={"request": req, "all_commodities": all_commodities, "username": username})
 
 
 # 后台管理-添加分类
@@ -132,7 +134,6 @@ async def allproduct(req: Request):
 async def adminaddproduct(req: Request):
     username = "ponon"
     return template.TemplateResponse("admin_addproduct.html", context={"request": req, "username": username})
-
 
 
 # 后台管理-产品管理-提交接口
@@ -149,4 +150,5 @@ async def allorder(req: Request):
     allorder = await Order.all()
     # 设置用户名
     username = "ponon"
-    return template.TemplateResponse("admin_order.html", context={"request": req, "allorder": allorder, "username": username})
+    return template.TemplateResponse("admin_order.html",
+                                     context={"request": req, "allorder": allorder, "username": username})
