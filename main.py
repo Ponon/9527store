@@ -1,4 +1,5 @@
 # 从fastapi库中 导入Fastapi 还有Form表单 还有Request请求
+import uvicorn
 from fastapi import FastAPI, Request, Form
 from starlette import status
 # 重定向
@@ -152,3 +153,8 @@ async def allorder(req: Request):
     username = "ponon"
     return template.TemplateResponse("admin_order.html",
                                      context={"request": req, "allorder": allorder, "username": username})
+
+
+if __name__ == '__main__':
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True, debug=True, workers=2);
+    print("程序启动完成");

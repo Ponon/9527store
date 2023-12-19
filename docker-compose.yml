@@ -1,0 +1,12 @@
+version : '3.8' #compose版本
+services:
+  server:
+    container_name: server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    #volumes:
+      #- ./resserver/files:/app/files
+      #- ./resserver/logs:/app/logs
